@@ -1,13 +1,21 @@
 import json
+import pprint
+import os
 
 
 def load_data(filepath):
-    pass
+    if not os.path.exists(filepath):
+        return None
+    with open(filepath) as data_file:
+        data = json.load(data_file)
+    return data
 
 
 def pretty_print_json(data):
-    pass
+    pprint.pprint(data)
 
 
 if __name__ == '__main__':
-    pass
+    file_name = input('Enter file name/path: ')
+    data = load_data(file_name)
+    pretty_print_json(data)
