@@ -1,5 +1,4 @@
 import json
-import pprint
 import os
 
 
@@ -12,7 +11,7 @@ def load_json_file(filepath):
 
 
 def pretty_print_json(json_object):
-    pprint.pprint(json_object)
+    print(json.dumps(json_object, indent=4, sort_keys=True, ensure_ascii=False))
 
 
 if __name__ == '__main__':
